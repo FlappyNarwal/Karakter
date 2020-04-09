@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="styles/styles.css">
+    <title>Karakter</title>
+</head>
+
+<body>
+
+    <div id="vliegen"></div>
+    <div id="oproepen"></div>
+    <div id="spreuk"></div>
+    <video id="Zerostate">
+        <source src="gifs/ZEROSTATE%20MET%20GELUID.mp4" type="video/mp4">
+    </video>
+
+    <script>
+        const video = document.getElementById('Zerostate');
+        const vliegen = document.getElementById("vliegen");
+        const oproepen = document.getElementById("oproepen");
+        const spreuk = document.getElementById("spreuk");
+
+        document.body.addEventListener("mousemove", function () {
+            video.play();
+        })
+
+        vliegen.addEventListener("click", function(){
+            changeVideo('VLIEGEN%20MET%20GELUID');
+        })        
+
+        oproepen.addEventListener("click", function(){
+            changeVideo('OPROEPEN%20MET%20GELUID');
+        })        
+
+        spreuk.addEventListener("click", function(){
+            changeVideo('SPREUK%20MET%20GELUID');
+        })        
+        
+
+        function changeVideo(url){
+            document.getElementsByTagName('source')[0].src = "gifs/" + url + ".mp4";
+            video.load();
+            video.play();
+            console.log(url)
+        }
+    </script>
+</body>
+
+</html>
